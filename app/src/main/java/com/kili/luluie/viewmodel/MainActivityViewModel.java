@@ -43,9 +43,6 @@ public class MainActivityViewModel extends BaseObservable {
 
     public void insert(AlbumDatum albumDatum) { albumRepo.insert(albumDatum); }
 
-
-
-
     @Bindable
     public String getTitle() {
         return albumDatum.getTitle();

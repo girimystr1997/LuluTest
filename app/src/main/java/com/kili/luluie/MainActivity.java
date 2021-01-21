@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void backResponse(boolean flag, String msg, JSONArray response) {
                 if (flag){
                     if (response.length() != albumData.size()){
+
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 mainActivityViewModel.insert(new Gson().fromJson(response.get(i).toString(),AlbumDatum.class));
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
+
                     }else {
                         loadFromLocal(albumData);
                     }

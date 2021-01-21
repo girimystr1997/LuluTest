@@ -39,11 +39,14 @@ public class AlbumRepo {
 
         @Override
         protected Void doInBackground(AlbumDatum... albumData) {
-            for (AlbumDatum datum : albumData) {
-                AlbumDatum albumDatum = new AlbumDatum(datum.getAlbumId(),datum.getId(),datum.getTitle(),datum.getUrl(),datum.getThumbnailUrl());
-                mAsyncTaskDao.insert(albumDatum);
+
+            try {
+            mAsyncTaskDao.insert(albumData[0]);
+            }catch (Exception exception) {
+                return null;
             }
             return null;
+
         }
     }
 }

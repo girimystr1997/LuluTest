@@ -18,6 +18,7 @@ public class AlbumDatum {
 
     private String thumbnailUrl;
 
+
     public Integer getAlbumId() {
         return albumId;
     }
